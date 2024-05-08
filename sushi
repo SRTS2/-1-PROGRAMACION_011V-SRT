@@ -1,0 +1,43 @@
+import os 
+import time 
+
+# Productos 
+proll = ("Pikachu Roll")
+oroll = ("Oraku Roll")
+pvroll = ("Pulpo Venoso Roll")
+aeroll = ("Anguila Electrica Roll")
+
+# Valor productos 
+valor_proll = 4500
+valor_oroll = 5000
+valor_pvroll = 5200
+valor_aeroll = 4800
+
+# Asignaciones
+menu1 = 1
+menu2 = 2
+menu3 = 3
+
+
+while qp == 1:
+    os.system("cls") #Limpiar pantalla
+    time.sleep(1) #Pausa
+    print("Bienvenido al menú de compra")
+    nombre=input("Por favor indicarnos su nombre: ")
+    
+    print("_"*60) 
+    print("OPCION"," PRODUCTO ","VALOR ", sep = "    |    ")
+    print("1", "Pikachu Roll","$4.500",sep = "  |  ")
+    print("2","Oraku Roll","$5.000",sep = "  |  ")
+    print("3","Pulpo Venoso Roll","$5.200",sep = "  |  ")
+    print("4","Anguila Electrica Roll","$4.800",sep = "  |  ")
+    print("si desea SALIR precione 0 en la      ",sep = "  |  ")
+    print("_"*60) 
+
+    try: 
+        qp=int(input("¿Cuántos productos desea comprar?"))
+    except ValueError:
+        print("#"*30)
+        print("Debe elegir entre 1 a 4 productos")
+        print("#"*30)
+    if qp == 1:
