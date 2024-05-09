@@ -1,4 +1,6 @@
-import os 
+# Menú Sushi
+
+import os
 import time 
 
 # Productos 
@@ -8,36 +10,42 @@ pvroll = ("Pulpo Venoso Roll")
 aeroll = ("Anguila Electrica Roll")
 
 # Valor productos 
-valor_proll = 4500
-valor_oroll = 5000
-valor_pvroll = 5200
-valor_aeroll = 4800
+proll_value = 4500
+oroll_value = 5000
+pvroll_value = 5200
+aeroll_value = 4800
 
-# Asignaciones
-menu1 = 1
-menu2 = 2
-menu3 = 3
+# Asignaciones explicadas
+# qr(1-4) = quantity roll 
 
+menuprincipal = int(input(f"Menu principal: \n ************************************************ \n 1 - {proll, ' $', proll_value} \n 2 - {oroll, " $", oroll_value} \n 3 - {pvroll, " $", pvroll_value} \n 4 - {aeroll, " $", aeroll_value} \n 5 - Finalizar compra \n 0 - Cancelar compra \n ************************************************ \n Ingresar opcion:  "))
 
-while qp == 1:
-    os.system("cls") #Limpiar pantalla
-    time.sleep(1) #Pausa
-    print("Bienvenido al menú de compra")
-    nombre=input("Por favor indicarnos su nombre: ")
-    
-    print("_"*60) 
-    print("OPCION"," PRODUCTO ","VALOR ", sep = "    |    ")
-    print("1", "Pikachu Roll","$4.500",sep = "  |  ")
-    print("2","Oraku Roll","$5.000",sep = "  |  ")
-    print("3","Pulpo Venoso Roll","$5.200",sep = "  |  ")
-    print("4","Anguila Electrica Roll","$4.800",sep = "  |  ")
-    print("si desea SALIR precione 0 en la      ",sep = "  |  ")
-    print("_"*60) 
+while menuprincipal != 0:
+    os.system("cls") #ClearScreen
+    time.sleep(1) #Pause
+    if menuprincipal == 1: 
+        print(proll, proll_value, sep=' - $')
+        qr1 = int(input("¿Cuántas unidades quiere?: "))
+    elif menuprincipal == 2: 
+        print(oroll, oroll_value, sep=' - $')
+        qr2 = int(input("¿Cuántas unidades quiere?: "))
+    elif menuprincipal == 3: 
+        print(pvroll, pvroll_value, sep=' - $')
+        qr3 = int(input("¿Cuántas unidades quiere?: "))
+    elif menuprincipal == 4: 
+        print(aeroll, aeroll_value, sep=' - $')
+        qr4 = int(input("¿Cuántas unidades quiere?: "))
 
-    try: 
-        qp=int(input("¿Cuántos productos desea comprar?"))
-    except ValueError:
-        print("#"*30)
-        print("Debe elegir entre 1 a 4 productos")
-        print("#"*30)
-    if qp == 1:
+    else:
+        print("="*30)
+        print("Carrito de compra")
+        print("="*30)
+        print("Cantidad", "Producto", "Valor total por producto", sep=" | ")
+        print(qr1, " | ", proll, "$", qr1*proll_value, " > ", proll, "$", proll_value)
+        print(qr2, " | ", oroll, "$", qr2*oroll_value, " > ", oroll, "$", oroll_value)
+        print(qr3, " | ", pvroll, "$", qr3*pvroll_value, " > ", pvroll, "$", pvroll_value)
+        print(qr4, " | ", aeroll, "$", qr4*aeroll_value, " > ", aeroll, "$", aeroll_value)
+        print("="*30)
+
+menuprincipal = int(input(f"Menu principal: \n ************************************************ \n 1 - {proll, ' $', proll_value} \n 2 - {oroll, " $", oroll_value} \n 3 - {pvroll, " $", pvroll_value} \n 4 - {aeroll, " $", aeroll_value} \n 5 - Finalizar compra \n 0 - Cancelar compra \n ************************************************ \n Ingresar opcion:  "))
+                      
